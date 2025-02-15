@@ -20,7 +20,7 @@ const Editor = () => {
   const handleRunCode = async () => {
     try {
       setLoading(true)
-      const response = await axios.post('http://localhost:3000/ai/get-review', { code });
+      const response = await axios.post('https://ai-1o1-codereviewer-1.onrender.com', { code });
       console.log(response.data);
       setOutput(response.data);
     } catch (error) {

@@ -18,9 +18,10 @@ const Editor = () => {
 
   // Function to call your API with the code
   const handleRunCode = async () => {
+    const backendURL=import.env.VITE_BACKEND_URL;
     try {
       setLoading(true)
-      const response = await axios.post('https://ai-1o1-codereviewer-1.onrender.com', { code });
+      const response = await axios.post(`${backendURL}/ai/get-review`, { code });
       console.log(response.data);
       setOutput(response.data);
     } catch (error) {

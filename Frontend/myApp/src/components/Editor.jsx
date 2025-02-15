@@ -18,7 +18,7 @@ const Editor = () => {
 
   // Function to call your API with the code
   const handleRunCode = async () => {
-    const backendURL=import.env.VITE_BACKEND_URL;
+    const backendURL=import.meta.env.VITE_BACKEND_URL;
     try {
       setLoading(true)
       const response = await axios.post(`${backendURL}/ai/get-review`, { code });
